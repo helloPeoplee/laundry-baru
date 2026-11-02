@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penatu Wastra</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <main class="landing-page">
+
+        <!-- NAVBAR -->
+        <header class="navbar">
+            <a href="index.html" class="brand">
+                <!-- GAMBAR LOGO BRAND -->
+                <img src="assets/logo.png" alt="Logo Penatu Wastra" class="brand-logo">
+                <div class="brand-info">
+                    <span class="brand-name">PENATU WASTRA</span>
+                    <span class="brand-description">Merawat Kain, Menjaga Kenyamanan</span>
+                </div>
+            </a>
+
+            <!-- ================= TAMBAHAN: MENU NAVIGASI DI NAVBAR ================= -->
+            
+
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="partner.html">Partner with us</a></li>
+                    <li><a href="contacts.html">Contacts</a></li>
+                    <li><a href="help.html">Help</a></li>
+                </ul>
+            </nav>
+
+            <a href="login.html" class="login-button">Login</a>
+            <!-- =================================================================== -->
+
+        </header>
+
+        <!-- CAROUSEL / SLIDER CONTAINER -->
+        <section class="slider-container">
+            <div class="slider-track" id="sliderTrack">
+
+                <!-- ================= SLIDE 1 ================= -->
+                <div class="slide slide-1">
+                    <img src="assets/hero-1.png" alt="Hero Banner Penatu Wastra" class="slide-img">
+    
+                </div>
+
+                <!-- ================= SLIDE 2 ================= -->
+                <div class="slide slide-2">
+                    <img src="assets/hero-2.png" alt="Layanan Penatu Wastra" class="slide-img">
+                </div>
+
+            </div>
+
+            <!-- TOMBOL NAVIGASI PANAH -->
+            <button class="slider-btn prev-btn" id="prevBtn" onclick="prevSlide()">&#10094;</button>
+            <button class="slider-btn next-btn" id="nextBtn" onclick="nextSlide()">&#10095;</button>
+
+            <!-- INDIKATOR TITIK (DOTS) -->
+            <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 2;
+        const sliderTrack = document.getElementById('sliderTrack');
+        const dots = document.querySelectorAll('.dot');
+
+        function updateSlider() {
+            sliderTrack.style.transform = `translateX(-${currentSlide * 100}vw)`;
+
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        setInterval(() => {
+            nextSlide();
+        }, 5000);
+    </script>
+
+</body>
+</html>
