@@ -1,0 +1,418 @@
+/* =========================
+   1. PENGATURAN DASAR
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #dbeeff;
+    color: #0b1f40;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.detail-container {
+    width: 100%;
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+/* =========================
+   2. KARTU LOKASI & INPUT NAMA/TELP
+   ========================= */
+.customer-header-info {
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+    border-bottom: 1px solid #edf2f7;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.inline-edit-input {
+    border: 1px dashed transparent;
+    border-radius: 4px;
+    padding: 3px 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+    background-color: #f8fafc;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.inline-edit-input:hover,
+.inline-edit-input:focus {
+    border-color: #26a69a;
+    background-color: #ffffff;
+}
+
+.name-input {
+    width: 150px;
+}
+
+.phone-wrapper {
+    display: inline-flex;
+    align-items: center;
+}
+
+.phone-input {
+    width: 140px;
+}
+
+.location-body {
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pin-icon {
+    color: #e51c23;
+    font-size: 20px;
+}
+
+.location-text {
+    font-size: 20px;
+    font-weight: 800;
+    color: #000000;
+}
+
+/* =========================
+   3. KARTU UTAMA LAYANAN
+   ========================= */
+.service-main-card {
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.brand-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mini-logo {
+    width: 22px;
+    height: 22px;
+}
+
+.brand-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.service-row-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background-color: #f8fafc;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #edf2f7;
+}
+
+.service-img {
+    width: 65px;
+    height: 55px;
+    object-fit: contain;
+    border-radius: 6px;
+    background-color: #ffffff;
+    padding: 4px;
+}
+
+.service-desc {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: #000000;
+}
+
+.service-price {
+    font-size: 16px;
+    font-weight: 800;
+    color: #ea580c;
+    margin-top: 2px;
+}
+
+/* INPUT PESAN UNTUK PEGAWAI */
+.pesan-pegawai-row {
+    border-top: 1px solid #edf2f7;
+    border-bottom: 1px solid #edf2f7;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pesan-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0b1f40;
+    white-space: nowrap;
+}
+
+.pesan-input {
+    flex: 1;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 6px 10px;
+    outline: none;
+    font-size: 13px;
+    color: #0b1f40;
+    background-color: #f8fafc;
+    transition: border-color 0.2s;
+}
+
+.pesan-input:focus {
+    border-color: #26a69a;
+    background-color: #ffffff;
+}
+
+/* OPSI PENGIRIMAN & LAYANAN */
+.option-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.option-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.option-chips-container {
+    display: flex;
+    gap: 12px;
+}
+
+.chip {
+    flex: 1;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.chip.active {
+    border-color: #26a69a;
+    background-color: #f0fdf4;
+}
+
+.chip-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.chip-sub {
+    font-size: 11px;
+    color: #475569;
+    margin-top: 2px;
+}
+
+.chip-price {
+    font-size: 12px;
+    font-weight: 700;
+    color: #000000;
+    margin-top: 4px;
+}
+
+.total-info-bar {
+    background-color: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 800;
+    color: #000000;
+}
+
+/* =========================
+   4. KARTU PEMBAYARAN & TOMBOL
+   ========================= */
+.payment-card {
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.payment-title-row {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 4px;
+}
+
+.payment-option-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000000;
+    padding: 8px 6px;
+    border-top: 1px solid #edf2f7;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.payment-ico {
+    font-size: 16px;
+    color: #475569;
+}
+
+.selected-payment {
+    color: #26a69a;
+    background-color: #f0fdf4;
+}
+
+.submit-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-ajukan {
+    width: 75%;
+    background-color: #4db6ac;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 14px 0;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(77, 182, 172, 0.4);
+    transition: background-color 0.2s;
+}
+
+.btn-ajukan:hover {
+    background-color: #00897b;
+}
+
+/* =========================
+   5. POP-UP MODAL SUKSES & TOMBOL OK
+   ========================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal-card {
+    background-color: #d1d5db;
+    width: 320px;
+    padding: 35px 25px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+.modal-icon-circle {
+    width: 90px;
+    height: 90px;
+    border: 4px solid #000000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.modal-icon-circle i {
+    font-size: 50px;
+    color: #000000;
+    font-weight: 900;
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.modal-subtitle {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1f2937;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.btn-modal-ok {
+    margin-top: 15px;
+    width: 120px;
+    background-color: #0b1f40;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 800;
+    padding: 10px 0;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-modal-ok:hover {
+    background-color: #26a69a;
+}
