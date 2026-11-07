@@ -1,65 +1,158 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Akun - Penatu Wastra</title>
-    <link rel="stylesheet" href="css/register.css">
-    <!-- Font Awesome untuk ikon Email, User, dan Kata Sandi -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="register-body">
+/* =========================
+   PENGATURAN DASAR HALAMAN REGISTER
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-    <!-- KARTU UTAMA REGISTRASI -->
-    <div class="register-card">
-        <img src="assets/logo.png" alt="Logo Penatu Wastra" class="card-logo">
+body.register-body {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #c0dcff; /* Latar belakang biru muda */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
 
-        <div class="register-header">
-            <h2>Buat Akun Milikmu</h2>
-            <div class="divider"></div>
-        </div>
+/* =========================
+   KARTU PUTIH REGISTER
+   ========================= */
+.register-card {
+    position: relative;
+    width: 540px;              
+    background-color: #ffffff;
+    padding: 45px 55px 35px 55px;
+    border-radius: 12px;       
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
 
-        <!-- FORM REGISTRASI -->
-        <form class="register-form" action="#" method="POST">
-            
-            <!-- INPUT EMAIL -->
-            <div class="input-group">
-                <label for="email">Email</label>
-                <div class="input-wrapper">
-                    <i class="fa-regular fa-envelope input-icon"></i>
-                    <input type="email" id="email" name="email" placeholder="Lala1212@gmail.com" required>
-                </div>
-            </div>
+/* LOGO BULAT DI POJOK KIRI ATAS */
+.card-logo {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 50%;         /* Membuat logo menjadi bulat */
+}
 
-            <!-- INPUT NAMA LENGKAP -->
-            <div class="input-group">
-                <label for="fullname">Nama Lengkap</label>
-                <div class="input-wrapper">
-                    <i class="fa-regular fa-user input-icon"></i>
-                    <input type="text" id="fullname" name="fullname" placeholder="Masukkan nama kamu" required>
-                </div>
-            </div>
+/* =========================
+   JUDUL & HEADER
+   ========================= */
+.register-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
 
-            <!-- INPUT KATA SANDI -->
-            <div class="input-group">
-                <label for="password">Kata Sandi</label>
-                <div class="input-wrapper">
-                    <i class="fa-solid fa-lock input-icon"></i>
-                    <input type="password" id="password" name="password" placeholder="****************" required>
-                </div>
-            </div>
+.register-header h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 2px;
+}
 
-            <!-- TOMBOL DAFTAR -->
-            <button type="submit" class="btn-register">Daftar</button>
+.register-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 12px;
+}
 
-            <!-- FOOTER SUDAH PUNYA AKUN -->
-            <p class="login-redirect-text">
-                Sudah mempunyai akun? <a href="login.html">Login</a>
-            </p>
+.register-header .divider {
+    width: 70%;
+    height: 2px;
+    background-color: #000000;
+    margin: 0 auto;
+}
 
-        </form>
+/* =========================
+   FORM & INPUT FIELDS
+   ========================= */
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
 
-    </div>
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
 
-</body>
-</html>
+.input-group label {
+    font-size: 15px;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    color: #8c8c8c;
+    font-size: 16px;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 12px 15px 12px 42px;
+    background-color: #dedede;  /* Latar abu-abu input */
+    border: none;
+    border-radius: 25px;        /* Capsule melengkung pada input */
+    font-size: 14px;
+    color: #333333;
+    outline: none;
+}
+
+.input-wrapper input::placeholder {
+    color: #a0a0a0;
+}
+
+/* =========================
+   TOMBOL DAFTAR & FOOTER
+   ========================= */
+.btn-register {
+    width: 100%;
+    padding: 12px;
+    background-color: #40b5c8;  /* Warna toska sesuai gambar */
+    color: #000000;
+    border: none;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+.btn-register:hover {
+    background-color: #3197a8;
+}
+
+.login-redirect-text {
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.login-redirect-text a {
+    color: #3b62cc;            /* Warna biru tautan */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-redirect-text a:hover {
+    text-decoration: underline;
+}
