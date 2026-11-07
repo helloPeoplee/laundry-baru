@@ -1,0 +1,172 @@
+/* =========================
+   PENGATURAN DASAR HALAMAN LOGIN
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body.login-body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #c0dcff; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* =========================
+   KARTU WHITE BOX LOGIN
+   ========================= */
+.login-card {
+    position: relative;
+    width: 480px;
+    background-color: #ffffff;
+    padding: 45px 50px 35px 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* LOGO DI SUDUT POJOK KIRI ATAS BORDER PUTIH */
+.card-logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+/* =========================
+   JUDUL & HEADER
+   ========================= */
+.login-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-header h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 2px;
+}
+
+.login-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+.login-header .divider {
+    width: 70%;
+    height: 2px;
+    background-color: #000000;
+    margin: 0 auto;
+}
+
+/* =========================
+   FORM & INPUT FIELDS
+   ========================= */
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    font-size: 15px;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    color: #8c8c8c;
+    font-size: 16px;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 12px 15px 12px 42px;
+    background-color: #dedede; /* Warna latar input abu-abu muda */
+    border: none;
+    border-radius: 25px; /* Kelengkungan capsule input */
+    font-size: 14px;
+    color: #333333;
+    outline: none;
+}
+
+.input-wrapper input::placeholder {
+    color: #a0a0a0;
+}
+
+/* LUPA KATA SANDI */
+.forgot-password {
+    text-align: right;
+    margin-top: 4px;
+}
+
+.forgot-password a {
+    font-size: 12px;
+    color: #333333;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   TOMBOL LOGIN & FOOTER
+   ========================= */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #40b5c8; 
+    color: #000000;
+    border: none;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #3197a8;
+}
+
+.signup-text {
+    text-align: center;
+    font-size: 15px;
+    color: #000000;
+}
+
+.signup-text a {
+    color: #3b62cc; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
