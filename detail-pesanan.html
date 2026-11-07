@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Pesanan - Penatu Wastra</title>
+    <link rel="stylesheet" href="detail-pesanan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <main class="detail-container">
+
+        <!-- HEADER JUDUL -->
+        <h1 class="main-title">Detail Pesanan</h1>
+
+        <!-- KARTU 1: NAMA, NO TELEPON & LOKASI -->
+        <div class="card location-card">
+            <div class="customer-header-info">
+                <input type="text" id="inputNama" class="inline-edit-input name-input" value="" placeholder="Masukkan Nama">
+                <span class="phone-wrapper">
+                    (<input type="tel" id="inputTelp" class="inline-edit-input phone-input" value="" placeholder="No. Telepon">)
+                </span>
+            </div>
+            <div class="location-body">
+                <i class="fa-solid fa-location-dot pin-icon"></i>
+                <span class="location-text">Lokasi</span>
+            </div>
+        </div>
+
+        <!-- KARTU 2: DETAIL LAYANAN & OPSI -->
+        <div class="card service-main-card">
+            <!-- Brand & Produk -->
+            <div class="brand-row">
+                <img src="assets/logo.png" alt="Logo" class="mini-logo">
+                <span class="brand-title">Penatu Wastra</span>
+            </div>
+
+            <div class="service-row-box">
+                <img id="serviceImg" src="assets/cuci_bersih.png" alt="Layanan Laundry" class="service-img">
+                <div class="service-desc">
+                    <span id="serviceName" class="service-name">Cuci Basah</span>
+                    <span id="servicePrice" class="service-price">Rp 10.000</span>
+                </div>
+            </div>
+
+            <!-- Pesan untuk Pegawai -->
+            <div class="pesan-pegawai-row">
+                <label for="pesanPegawaiInput" class="pesan-label">Pesan untuk pegawai &gt;</label>
+                <input type="text" id="pesanPegawaiInput" placeholder="Tulis keterangan di sini..." class="pesan-input">
+            </div>
+
+            <!-- Opsi Pengiriman -->
+            <div class="option-section">
+                <span class="option-label">Opsi Pengiriman :</span>
+                <div class="option-chips-container">
+                    <div class="chip active" onclick="selectPengiriman(this)">
+                        <span class="chip-title">Di ambil/antar kurir</span>
+                        <span class="chip-price">Rp 10.000</span>
+                    </div>
+                    <div class="chip" onclick="selectPengiriman(this)">
+                        <span class="chip-title">Di ambil kurir</span>
+                        <span class="chip-price">Gratis</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opsi Layanan -->
+            <div class="option-section">
+                <span class="option-label">Opsi layanan:</span>
+                <div class="option-chips-container">
+                    <div class="chip active" onclick="selectLayanan(this)">
+                        <span class="chip-title">10 - 11 okt</span>
+                        <span class="chip-sub">Layanan cepat</span>
+                        <span class="chip-price">Rp 12.000</span>
+                    </div>
+                    <div class="chip" onclick="selectLayanan(this)">
+                        <span class="chip-title">10 - 13 okt</span>
+                        <span class="chip-sub">Normal</span>
+                        <span class="chip-price">Rp 10.000</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total Harga Info -->
+            <div class="total-info-bar">
+                Total harga akan diketahui ketika barang ditimbang kurir
+            </div>
+        </div>
+
+        <!-- KARTU 3: METODE PEMBAYARAN -->
+        <div class="card payment-card">
+            <div class="payment-title-row">Metode Pembayaran:</div>
+            <div class="payment-option-row selected-payment" onclick="selectPayment(this)">
+                <i class="fa-solid fa-wallet payment-ico"></i>
+                <span>COD</span>
+            </div>
+            <div class="payment-option-row" onclick="selectPayment(this)">
+                <i class="fa-solid fa-qrcode payment-ico"></i>
+                <span>QRIS</span>
+            </div>
+        </div>
+
+        <!-- TOMBOL AJUKAN PESANAN -->
+        <div class="submit-btn-container">
+            <button class="btn-ajukan" onclick="showSuccessModal()">Ajukan Pesanan</button>
+        </div>
+
+    </main>
+
+    <!-- POP-UP MODAL BERHASIL DIAJUKAN -->
+    <div id="successModal" class="modal-overlay hidden" onclick="closeSuccessModal(event)">
+        <div class="modal-card">
+            <div class="modal-icon-circle">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h2 class="modal-title">Pesanan Berhasil Diajukan</h2>
+            <p class="modal-subtitle">Mohon Tunggu Konfirmasi Admin!</p>
+            
+            <!-- Tombol OK untuk kembali ke home -->
+            <button class="btn-modal-ok" onclick="redirectToHome()">OK</button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const layananData = {
+            'cuci-basah': {
+                name: 'Cuci Basah',
+                price: 'Rp 10.000',
+                img: 'assets/cuci_bersih.png'
+            },
+            'cuci-kering': {
+                name: 'Cuci Kering',
+                price: 'Rp 12.000',
+                img: 'assets/cuci_kering.png'
+            },
+            'cuci-setrika': {
+                name: 'Cuci Setrika',
+                price: 'Rp 15.000',
+                img: 'assets/cuci_setrika.png'
+            },
+            'setrika': {
+                name: 'Setrika',
+                price: 'Rp 8.000',
+                img: 'assets/setrika.png'
+            }
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const layananParam = urlParams.get('layanan') || 'cuci-basah';
+            const selected = layananData[layananParam] || layananData['cuci-basah'];
+
+            document.getElementById('serviceName').innerText = selected.name;
+            document.getElementById('servicePrice').innerText = selected.price;
+            document.getElementById('serviceImg').src = selected.img;
+            document.getElementById('serviceImg').alt = selected.name;
+        });
+
+        function selectPengiriman(element) {
+            element.parentElement.querySelectorAll('.chip').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        function selectLayanan(element) {
+            element.parentElement.querySelectorAll('.chip').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        function selectPayment(element) {
+            element.parentElement.querySelectorAll('.payment-option-row').forEach(el => el.classList.remove('selected-payment'));
+            element.classList.add('selected-payment');
+        }
+
+        function showSuccessModal() {
+            document.getElementById('successModal').classList.remove('hidden');
+        }
+
+        function redirectToHome() {
+            window.location.href = 'home.html';
+        }
+    </script>
+
+</body>
+</html>
