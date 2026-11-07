@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Penatu Wastra</title>
+    <link rel="stylesheet" href="css/home.css">
+    <!-- Font Awesome untuk ikon pencarian, lonceng, dan profil user -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR ATAS DENGAN LATAR PUTIH -->
+    <header class="home-navbar">
+        <a href="home.html" class="brand">
+            <img src="assets/logo.png" alt="Logo Penatu Wastra" class="brand-logo">
+            <div class="brand-info">
+                <span class="brand-name">PENATU WASTRA</span>
+                <span class="brand-description">Dijamin Bersih, Kinclong dan Wangi</span>
+            </div>
+        </a>
+
+        <!-- MENU NAVIGASI -->
+        <nav class="home-nav-links">
+            <ul>
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="kategori.html">Kategori</a></li>
+                <li><a href="reward-poin.html">Reward poin</a></li>
+            </ul>
+        </nav>
+
+        <!-- IKON NOTIFIKASI & PROFIL -->
+        <div class="user-actions">
+            <a href="#" class="icon-btn"><i class="fa-regular fa-bell"></i></a>
+            <a href="#" class="icon-btn"><i class="fa-regular fa-user"></i></a>
+        </div>
+    </header>
+
+    <main class="home-container">
+
+        <!-- KONTAINER UTAMA HERO: GAMBAR & SEARCH BAR DI DALAMNYA -->
+        <div class="hero-header-container">
+            <div class="hero-banner-wrapper">
+                <img src="assets/latar_home.png" alt="Ilustrasi Tumpukan Pakaian dan Pembersih" class="hero-full-img">
+                
+                <!-- IKON CHAT FLOATING -->
+                <a href="#" class="chat-float-icon emoji-chat">🗨️</a>
+            </div>
+
+            <!-- SEARCH BAR (KAPSUL PENCARIAN DI DALAM AREA GAMBAR) -->
+            <div class="search-section-overlay">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Cari layanan atau paket laundry...">
+                </div>
+            </div>
+        </div>
+
+        <!-- BANNER PESAN SEKARANG -->
+        <section class="order-now-section">
+            <a href="#pilihan-laundry" class="btn-pesan-sekarang">
+                <span class="emoji-box">📦</span>
+                <span>PESAN SEKARANG</span>
+            </a>
+        </section>
+
+        <!-- PILIHAN LAUNDRY -->
+        <section class="laundry-options-section" id="pilihan-laundry">
+            <h2 class="section-title">Pilihan Laundry</h2>
+
+            <div class="laundry-grid">
+                
+                <!-- KARTU 1: CUCI BASAH -->
+                <a href="detail-pesan.html?layanan=cuci-basah" class="laundry-card">
+                    <div class="card-icon-wrapper">
+                        <img src="assets/cuci_bersih.png" alt="Ikon Mesin Cuci Basah" class="laundry-icon">
+                    </div>
+                    <h3>Cuci Basah</h3>
+                </a>
+
+                <!-- KARTU 2: CUCI KERING -->
+                <a href="detail-pesan.html?layanan=cuci-kering" class="laundry-card">
+                    <div class="card-icon-wrapper">
+                        <img src="assets/cuci_kering.png" alt="Ikon Baju Gantungan Cuci Kering" class="laundry-icon">
+                    </div>
+                    <h3>Cuci Kering</h3>
+                </a>
+
+                <!-- KARTU 3: CUCI SETRIKA -->
+                <a href="detail-pesan.html?layanan=cuci-setrika" class="laundry-card">
+                    <div class="card-icon-wrapper">
+                        <img src="assets/cuci_setrika.png" alt="Ikon Mesin Cuci dan Meja Setrika" class="laundry-icon">
+                    </div>
+                    <h3>Cuci Setrika</h3>
+                </a>
+
+                <!-- KARTU 4: SETRIKA -->
+                <a href="detail-pesan.html?layanan=setrika" class="laundry-card">
+                    <div class="card-icon-wrapper">
+                        <img src="assets/setrika.png" alt="Ikon Tumpukan Baju Rapi Setrika" class="laundry-icon">
+                    </div>
+                    <h3>Setrika</h3>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- RUANG KOSONG TENGAH -->
+        <div class="white-space-divider"></div>
+
+    </main>
+
+    <!-- FOOTER: ABOUT US & CONTACT US -->
+    <footer class="home-footer">
+        <div class="footer-container">
+            
+            <!-- Kolom 1: About Us -->
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>
+                    Penatu Wastra diterbitkan untuk memberikan pelayanan cuci pakaian yang memudahkan konsumen dalam meringankan pekerjaan rumah.
+                </p>
+            </div>
+
+            <!-- Kolom 2: Kontak & Alamat -->
+            <div class="footer-column">
+                <h3>Hubungi Kami</h3>
+                <ul class="footer-contact">
+                    <li>📍 Jalan Kolam Nomor 1 Medan Estate / Jalan Gedung PBSI, Medan 20223, Sumatera Utara</li>
+                    <li>📱 0851 1810 2026 (WhatsApp)</li>
+                    <li>🕗 Setiap hari 09.00 – 17.00</li>
+                </ul>
+            </div>
+
+            <!-- Kolom 3: Kelompok -->
+            <div class="footer-column">
+                <h3>Kelompok</h3>
+                <ul class="kelompok-list">
+                    <li>Ade</li>
+                    <li>Dwi</li>
+                    <li>Nor</li>
+                    <li>Tomy</li>
+                    <li>Zulfa</li>
+                    <li>Yonaldo</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Bagian Bawah Footer (Copyright) -->
+        <div class="footer-bottom">
+            <span>© 2026 Penatu Wastra - Tugas Pemrograman Web I</span>
+            <span>Dosen Pengampu: Bapak Rizki Muliono, S.Kom, M.Kom</span>
+        </div>
+    </footer>
+
+</body>
+</html>
